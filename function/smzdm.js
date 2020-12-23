@@ -16,8 +16,8 @@ const PASS = process.env.SMZDM_PASS
 const SEND_KEY = process.env.SEND_KEY
 
 async function downFile () {
-    // const url1 = 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_checkin.js'
-    const url1 = 'https://raw.githubusercontent.com/jiegto/Actions_smzdm/main/backup/smzdm_checkin.js'
+    const url1 = 'https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_checkin.js'
+    // const url1 = 'https://raw.githubusercontent.com/jiegto/Actions_smzdm/main/backup/smzdm_checkin.js'
     const url2 = 'https://raw.githubusercontent.com/jiegto/Actions_smzdm/main/function/magic.json'    
     await download(url1, './')
     await download(url2, './')
@@ -57,10 +57,10 @@ async function start() {
     console.log('执行完毕')
     const path = "./result.txt";
     let content = "";
-    let body = "";
+    // let body = "";
     if (fs.existsSync(path)) {
-        body = fs.readFileSync(path, "utf8");
-        content = body.match(/title[\s\S]*options/);
+        content = fs.readFileSync(path, "utf8");
+        // content = body.match(/title[\s\S]*options/);
     }
     
     if(SEND_KEY) {
